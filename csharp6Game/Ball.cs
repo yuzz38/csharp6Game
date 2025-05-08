@@ -23,7 +23,7 @@ namespace SimpleArkanoid
 
 
 
-            g.FillEllipse(new SolidBrush(Color.Blue), X - Radius, Y - Radius, Radius * 2, Radius * 2);
+            g.FillEllipse(new SolidBrush(Color.DeepSkyBlue), X - Radius, Y - Radius, Radius * 2, Radius * 2);
         }
     }
 }
