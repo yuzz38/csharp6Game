@@ -18,9 +18,12 @@ namespace SimpleArkanoid
             Radius = radius;
         }
 
-        public void draw(Graphics g)
+        public void Draw(Graphics g)
         {
-            g.FillEllipse(new SolidBrush(Color), X - Radius, Y - Radius, Radius * 2, Radius * 2);
+
+
+
+            g.FillEllipse(new SolidBrush(Color.Blue), X - Radius, Y - Radius, Radius * 2, Radius * 2);
         }
     }
 }
