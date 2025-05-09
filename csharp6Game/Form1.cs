@@ -56,7 +56,7 @@ namespace csharp6Game
                     game = new Game(gameCanvas.Width, gameCanvas.Height);
                     game.InitializeLevel(1);
                     Redraw();
-                    e.Handled = true; // Предотвращаем дальнейшую обработку
+                   
                 }
             };
         }
