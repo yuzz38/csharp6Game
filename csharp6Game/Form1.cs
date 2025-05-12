@@ -68,6 +68,15 @@ namespace csharp6Game
                     Redraw();
                 }
             };
+            trackBarSize.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.R)
+                {
+                    game = new Game(gameCanvas.Width, gameCanvas.Height);
+                    game.InitializeLevel(1);
+                    Redraw();
+                }
+            };
         }
         private void Redraw()
         {
@@ -139,7 +148,20 @@ namespace csharp6Game
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            game.PaddleWidth = trackBar1.Value;  // Регулируем платформу от 50 до 200 пикселей
+            game.PaddleWidth = trackBar1.Value;  
+            Redraw();
+        }
+
+        private void labelBallSize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBarSize_Scroll(object sender, EventArgs e)
+        {
+            game.Ball.Radius = trackBarSize.Value;
+
+            // Перерисовываем экран
             Redraw();
         }
     }

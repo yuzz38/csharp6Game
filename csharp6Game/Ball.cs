@@ -8,7 +8,7 @@ namespace SimpleArkanoid
         public float Y { get; set; }
         public float VelocityX { get; set; }
         public float VelocityY { get; set; }
-        public int Radius { get; }
+        public int Radius { get; set; }
         public Color Color { get; } = Color.White;
 
         public Ball(float x, float y, int radius)
