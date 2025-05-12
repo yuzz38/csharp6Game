@@ -43,20 +43,20 @@ namespace csharp6Game
             Redraw();
 
             // Настраиваем таймер
-            gameTimer.Interval = 16;
+            gameTimer.Interval = 10;
             gameTimer.Tick += GameLoop;
             gameTimer.Start();
 
             // Обработчики событий
             gameCanvas.MouseMove += (s, e) => game.PaddleX = e.X;
-            this.KeyDown += (s, e) =>
+          
+            trackBar.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.R)
                 {
                     game = new Game(gameCanvas.Width, gameCanvas.Height);
                     game.InitializeLevel(1);
                     Redraw();
-                   
                 }
             };
         }
@@ -116,9 +116,11 @@ namespace csharp6Game
             }
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
+        
 
+        private void trackBar_Scroll(object sender, EventArgs e)
+        {
+            gameTimer.Interval = trackBar.Value;
         }
     }
 }
