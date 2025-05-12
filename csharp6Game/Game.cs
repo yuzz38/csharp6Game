@@ -20,7 +20,7 @@ namespace csharp6Game
         public int Level { get; set; } = 1;
         public bool GameOver { get; set; } = false;
 
-        private const float PaddleWidth = 100;
+        public float PaddleWidth = 100;
         private const float PaddleHeight = 15;
         private const float PaddleYOffset = 30;
         private readonly Random random = new Random();
@@ -51,7 +51,7 @@ namespace csharp6Game
             {
                 VelocityX = random.Next(-5, 6),
                 VelocityY = -5
-            };
+            } ;
         }
 
         public void DrawPaddle(Graphics g)

@@ -31,7 +31,7 @@ namespace csharp6Game
 
         public static IEnumerable<Particle> CreateParticles(int level, int width, int height, Random random)
         {
-            int count = 1;
+            int count = 20;
             for (int i = 0; i < count; i++)
             {
                 yield return new Particle(

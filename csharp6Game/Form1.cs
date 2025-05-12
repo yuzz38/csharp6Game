@@ -13,7 +13,7 @@ namespace csharp6Game
 {
     public partial class Form1 : Form
     {
-        private Game game;
+        public Game game;
         private Bitmap buffer;
         private Font uiFont = new Font("Arial", 12);
 
@@ -51,6 +51,15 @@ namespace csharp6Game
             gameCanvas.MouseMove += (s, e) => game.PaddleX = e.X;
           
             trackBar.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.R)
+                {
+                    game = new Game(gameCanvas.Width, gameCanvas.Height);
+                    game.InitializeLevel(1);
+                    Redraw();
+                }
+            };
+            trackBar1.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.R)
                 {
@@ -121,6 +130,17 @@ namespace csharp6Game
         private void trackBar_Scroll(object sender, EventArgs e)
         {
             gameTimer.Interval = trackBar.Value;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            game.PaddleWidth = trackBar1.Value;  // Регулируем платформу от 50 до 200 пикселей
+            Redraw();
         }
     }
 }
